@@ -1,0 +1,55 @@
+Student Information
+-------------------
+<Hang Lin, lin1412>
+<Eric Lewis, airshp12>
+
+
+How to execute the shell
+------------------------
+<describe how to execute from the command line>
+	From terminal, change directory to the location of the files. Use command
+'make' to compile the shell. Then use command ' ./esh ' to run the shell.
+
+
+Important Notes
+---------------
+<Any important notes about your system>
+
+The signal handler for Ctrl+Z is not working, therefore we are also failing
+the test for fg, and jobs even though they work.
+	
+
+
+Description of Base Functionality
+---------------------------------
+<describe your IMPLEMENTATION of the following commands:
+jobs, fg, bg, kill, stop, \^C, \^Z >
+	First we get the name of the command, and then the arguments that were
+pass in. We have an helper function that test if the inputed command are 
+build-in or not. If the command is not a build-in commands, then we call
+another helper function that fork the shell, and if succussful, execute the 
+program, the first argument, and pass in the rest of the arguments. If the 
+command contains '&' or if there's already a program in the foreground, then 
+we run the program in the background. We used If-statements to determine which
+command the user has inputed. If the command was jobs, then the list of jobs 
+would be printed in chronological order, with it's current status and command.
+If it were fb, gb, kill or stop, then we would check the target's (argument's) 
+status and determine the action to perform. 
+
+
+Description of Extended Functionality
+-------------------------------------
+<describe your IMPLEMENTATION of the following functionality:
+I/O, Pipes, Exclusive Access >
+
+
+List of Plugins Implemented
+---------------------------
+(Written by Your Team)
+<plugin name>
+<description>
+
+(Written by Others)
+<plugin name>
+<group name>
+
